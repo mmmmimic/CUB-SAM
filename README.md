@@ -5,7 +5,7 @@ This repository provides a very simple pipeline for calling the segment everythi
 CUB-200-2011 dataset includes 11788 images of 200 different bird species, with annotations on 15 part locations and 1 bounding box representing the whole bird. These parts, e.g., bird beaks, are demonstrated to play a key role in fine-grained bird recognition. In the original annotation, part locations were marked by key points - this repository aims at presenting the bird parts with segmentation masks. This is done by employing the key point coordinates as prompts in the SAM model pre-trained on large-scale datasets. Besides, we tried to adopt the provided bounding box as prompts, which generated binary segmentation on the bird and the image background.
 
 <div align="center">
-<img src=assets/image.jpg width="300"/><img src=assets/binary_mask.png width="300"/><img src=assets/multi_class_mask.png width="300"/>
+<img src=assets/image.jpg width="200"/><img src=assets/binary_mask.png width="200"/><img src=assets/multi_class_mask.png width="200"/>
 </div>
 
 
