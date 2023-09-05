@@ -15,15 +15,15 @@ CUB-200-2011 dataset includes 11788 images of 200 different bird species, with a
 
 ## Hands-on the model
 **Prepare dataset**  
-Download the [CUB-200-2011](https://www.vision.caltech.edu/datasets/cub_200_2011/) dataset, and unzip it in data/. The directory should be like:
-data/  
-    CUB_200_2011/
-        attributes/
-        images/
-        parts/
-        images.txt
-        bounding_boxes.txt
-        ...
+Download the [CUB-200-2011](https://www.vision.caltech.edu/datasets/cub_200_2011/) dataset, and unzip it in data/. The directory should be like:  
+data/    
+&nbsp; CUB_200_2011/  
+&nbsp;&nbsp; attributes/  
+&nbsp;&nbsp; images/  
+&nbsp;&nbsp; parts/  
+&nbsp;&nbsp; images.txt  
+&nbsp;&nbsp; bounding_boxes.txt  
+&nbsp;&nbsp; ...  
 
 **Generate segmentation masks with SAM**
 
