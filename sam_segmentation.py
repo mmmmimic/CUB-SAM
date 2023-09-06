@@ -77,6 +77,11 @@ if __name__ == "__main__":
     
     for index in tqdm(range(len(loader))):
         image_path, image, bboxes, point_coords, point_labels, click_coords, click_labels = loader(index)
+        save_path = os.path.join(mask_dir, image_path.replace('jpg', 'png'))
+        
+        if os.path.isfile(save_path):
+            continue
+        
         predictor.set_image(image)
         
         if args.prompt == 'box':
@@ -113,6 +118,6 @@ if __name__ == "__main__":
         # save mask
         if not os.path.exists(os.path.join(mask_dir, image_path.split('/')[0])):
             os.mkdir(os.path.join(mask_dir, image_path.split('/')[0]))
-        save_colored_mask(mask, save_path=os.path.join(mask_dir, image_path.replace('jpg', 'png')))
+        save_colored_mask(mask, save_path=save_path)
         
             
