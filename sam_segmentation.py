@@ -7,6 +7,7 @@ import numpy as np
 import os
 from PIL import Image
 import imgviz
+import torch
 
 parser = argparse.ArgumentParser(
                     prog='CUB-SAM',
@@ -64,8 +65,12 @@ if __name__ == "__main__":
     
     if not os.path.isfile(model_path):
         os.system(f"wget https://dl.fbaipublicfiles.com/segment_anything/{model_path}")
-
+        
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Running model on {device}")
+    
     sam = sam_model_registry[args.model](checkpoint=model_path)
+    sam = sam.to(device=device)
     predictor = SamPredictor(sam)
     
     loader = DataLoader('data/CUB_200_2011')
